@@ -25,7 +25,7 @@ let package = Package(
             name: "NYTPhotoViewer",
             dependencies: ["PINRemoteImage"],
             path: "NYTPhotoViewer",
-            publicHeadersPath: "include"
+            publicHeadersPath: "NYTPhotoViewer"
         )
     ]
 )
