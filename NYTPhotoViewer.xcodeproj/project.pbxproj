@@ -170,6 +170,13 @@
 			remoteGlobalIDString = 111084051C875B5000699670;
 			remoteInfo = NYTPhotoViewer;
 		};
+		131F8EC0254A8E9D003E93D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11BA4AF51C8912F20007EC46 /* OCMock.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DE97CA022B43EE60098C63F;
+			remoteInfo = "OCMock watchOS";
+		};
 		CD3F77D72409229B005F08E8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CD3F77CE2409229B005F08E8 /* PINRemoteImage.xcodeproj */;
@@ -285,7 +292,7 @@
 		111084931C876D1900699670 /* NYTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTViewController.m; sourceTree = "<group>"; };
 		111084951C876D8800699670 /* NYTPhotoViewer-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "NYTPhotoViewer-Info.plist"; sourceTree = "<group>"; };
 		11BA4AF51C8912F20007EC46 /* OCMock.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OCMock.xcodeproj; path = Carthage/Checkouts/ocmock/Source/OCMock.xcodeproj; sourceTree = "<group>"; };
-		11FBDA791C87714600018169 /* NYTPhotoViewer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = NYTPhotoViewer.bundle; path = ../NYTPhotoViewer.bundle; sourceTree = "<group>"; };
+		11FBDA791C87714600018169 /* NYTPhotoViewer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NYTPhotoViewer.bundle; sourceTree = "<group>"; };
 		11FBDA831C8774AC00018169 /* NYTPhotoViewerCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NYTPhotoViewerCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		11FBDAA51C87768700018169 /* NYTPhotoViewerCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NYTPhotoViewerCore.h; sourceTree = "<group>"; };
 		11FBDADC1C877BD600018169 /* Example-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Example-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -404,8 +411,13 @@
 				93F45B171E3BB5610093DB93 /* NYTPhotoViewerSinglePhotoDataSource.m */,
 				111084431C87682300699670 /* NYTScalingImageView.h */,
 				111084441C87682300699670 /* NYTScalingImageView.m */,
-				111084451C87682300699670 /* Protocols */,
-				1110844A1C87682300699670 /* Resource Loading */,
+				111084461C87682300699670 /* NYTPhoto.h */,
+				111084471C87682300699670 /* NYTPhotoCaptionViewLayoutWidthHinting.h */,
+				111084481C87682300699670 /* NYTPhotoViewerContainer.h */,
+				111084491C87682300699670 /* NYTPhotoViewerDataSource.h */,
+				11FBDA791C87714600018169 /* NYTPhotoViewer.bundle */,
+				1110844B1C87682300699670 /* NSBundle+NYTPhotoViewer.h */,
+				1110844C1C87682300699670 /* NSBundle+NYTPhotoViewer.m */,
 				1110840B1C875B5000699670 /* Info.plist */,
 			);
 			path = NYTPhotoViewer;
@@ -425,27 +437,6 @@
 				111084171C875B5000699670 /* Info.plist */,
 			);
 			path = NYTPhotoViewerTests;
-			sourceTree = "<group>";
-		};
-		111084451C87682300699670 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				111084461C87682300699670 /* NYTPhoto.h */,
-				111084471C87682300699670 /* NYTPhotoCaptionViewLayoutWidthHinting.h */,
-				111084481C87682300699670 /* NYTPhotoViewerContainer.h */,
-				111084491C87682300699670 /* NYTPhotoViewerDataSource.h */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		1110844A1C87682300699670 /* Resource Loading */ = {
-			isa = PBXGroup;
-			children = (
-				11FBDA791C87714600018169 /* NYTPhotoViewer.bundle */,
-				1110844B1C87682300699670 /* NSBundle+NYTPhotoViewer.h */,
-				1110844C1C87682300699670 /* NSBundle+NYTPhotoViewer.m */,
-			);
-			path = "Resource Loading";
 			sourceTree = "<group>";
 		};
 		1110846B1C876A2B00699670 /* Example */ = {
@@ -484,6 +475,7 @@
 				11BA4B051C8912F20007EC46 /* OCMockLibTests.xctest */,
 				11BA4B071C8912F20007EC46 /* OCMock.framework */,
 				11BA4B091C8912F20007EC46 /* OCMock.framework */,
+				131F8EC1254A8E9D003E93D4 /* OCMock.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -772,6 +764,13 @@
 			fileType = wrapper.framework;
 			path = OCMock.framework;
 			remoteRef = 11BA4B081C8912F20007EC46 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		131F8EC1254A8E9D003E93D4 /* OCMock.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OCMock.framework;
+			remoteRef = 131F8EC0254A8E9D003E93D4 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		CD3F77D82409229B005F08E8 /* PINRemoteImage.framework */ = {
