@@ -6,15 +6,16 @@ import PackageDescription
 let package = Package(
     name: "NYTPhotoViewer",
     platforms: [
-             .macOS(.v10_10),
-             .iOS(.v9),
-             .tvOS(.v9)
-         ],
+         .macOS(.v10_10),
+         .iOS(.v9),
+         .tvOS(.v9)
+    ],
     products: [
         .library(
             name: "NYTPhotoViewer",
             type: .static,
-            targets: ["NYTPhotoViewer"]),
+            targets: ["NYTPhotoViewer"]
+        ),
     ],
     dependencies: [
         .package(url: "https://github.com/pinterest/PINRemoteImage.git", from: "3.0.2"),
